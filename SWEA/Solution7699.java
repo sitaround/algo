@@ -36,7 +36,7 @@ class Solution7699{
         bw.close();
         br.close();
     }
-
+    // visit은 0~30까지 31개의 원소들에 대해 표시가능. 
     static void dfs(int visit, int x, int y, int cnt){
         if(answer == R*C)   return;
         answer = (answer < cnt) ? cnt : answer;
