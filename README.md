@@ -1,3 +1,3 @@
 # 심심할 때마다 푸는 SWEA 문제
------------------------------
-number.java는 swea에서 문제번호.
+---
+SolutionXXXX.java에서 XXXX는 SWEA의 문제번호
