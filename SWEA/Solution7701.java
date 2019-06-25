@@ -14,7 +14,8 @@ class Solution7701{
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         
         int T = Integer.parseInt(br.readLine());
-        int N;
+        int N, size;
+        String tmp;
         ArrayList<String>[] name;
         
         for(int test_case = 1; test_case <= T; test_case++){
@@ -29,11 +30,13 @@ class Solution7701{
             }
             for(int i = 0; i < 50; i++){
                 Collections.sort(name[i]);
-                if(name[i].size() != 0){
+                size = name[i].size();
+                if(size != 0){
                     bw.write(name[i].get(0) + "\n");
-                    for(int j = 1; j < name[i].size(); j++){
-                        if(!name[i].get(j).equals(name[i].get(j-1)))
-                            bw.write(name[i].get(j)+"\n");
+                    for(int j = 1; j < size; j++){
+                        tmp = name[i].get(j);
+                        if(!tmp.equals(name[i].get(j-1)))
+                            bw.write(tmp+"\n");
                     }
                 }
             }
