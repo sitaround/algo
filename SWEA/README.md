@@ -9,15 +9,15 @@ for(int i = 0; i < N; i++)
 int i;
 for(i = 0; i*i < N; i++)
     if(N % i == 0)
-        System.out.printf("%d %d", i, n/i);
+        System.out.printf("%d %d", i, N/i);
 if(i * i == N)
     System.out.println(i);
 ```
 - 31개 이하에서는 visit 배열보다는 int형으로
 ```java
 int visit;
-visit = 1 << map[x][y]; //map[x][y]를 방문 표시.
-if(visit & (1 << map[dx][dy]) == 0) //0이면 map[dx][dy]를 방문 안 함.
+visit = 1 << map[x][y];                 //map[x][y]를 방문 표시.
+if(visit & (1 << map[dx][dy]) == 0)     //0이면 map[dx][dy]를 방문 안 함.
     visit = visit | (1 << map[dx][dy]); //visit 변수에 map[dx][dy] 방문 표시.
 /*
 마을이 5개가 있다고 하면,
