@@ -27,3 +27,16 @@ int visit = 0 으로 선언했다고 하면, 00000으로 생각을 할 수 있�
 이렇게 int 형 하나만으로 31개의 마을에 대해 표시를 할 수가 있다.
 */
 ```
+- 빠른 지수곱 구하기
+기존 지수곱을 구하려면 O(n)이 걸리지만, 만약 x^8을 구할 때 x^8 = x^4 * x^4를 이용하여 O(logn)에 구할 수 있다.
+<https://en.wikipedia.org/wiki/Addition-chain_exponentiation>도 존재.
+```java
+int pow(int base, int exp){
+    res = 1;
+    while(exp > 0){
+        if(exp % 2 == 1) res *= base;
+        base *= base;
+        exp /= 2;
+    }
+}
+```
