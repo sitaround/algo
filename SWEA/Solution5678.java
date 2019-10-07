@@ -34,17 +34,17 @@ public class Solution5678 {
         br.close();
     }
 
-    static void manachers(char[] str, int[] manacher){  //이해 안감. 다시 보기
+    static void manachers(char[] str, int[] A){  //이해 안감. 다시 보기
         int N = str.length;
         int r = 0, p = 0;
         for(int i = 0; i < N; i++){
-            if(i <= r) manacher[i] = manacher[2*p-i] > r-i ? r-i : manacher[2*p-i];
-            else manacher[i] = 0;
-            while(i - manacher[i] - 1 >= 0 && i + manacher[i] + 1 < N && str[i-manacher[i]-1] == str[i+manacher[i]+1]){
-                manacher[i]++;
+            if(i <= r) A[i] = A[2*p-i] > r-i ? r-i : A[2*p-i];
+            else A[i] = 0;
+            while(i - A[i] - 1 >= 0 && i + A[i] + 1 < N && str[i-A[i]-1] == str[i+A[i]+1]){
+                A[i]++;
             }
-            if(r < i + manacher[i]){
-                r = i + manacher[i];
+            if(r < i + A[i]){
+                r = i + A[i];
                 p = i;
             }
         }
