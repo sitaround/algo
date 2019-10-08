@@ -40,3 +40,5 @@ int pow(int base, int exp){
     }
 }
 ```
+- 빠른 팰린드롬 구하기
+기존 팰린드롬을 구하려면 O(N^2)이 걸리나 manacher's algorithm을 사용하면 O(N)에 구할 수 있다.
