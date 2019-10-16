@@ -83,7 +83,7 @@ public class Solution2115 {
         boolean chk = true;
         for(int i = 1; i < n; i++){
             for(int j = 0; j < M; j++){
-                if(( i >> j ) % 2 == 1){
+                if(( i >> j & 1) == 1){
                     tmp += m[j];
                     tmp1 += m[j] * m[j];
                 }
