@@ -1,7 +1,7 @@
 package SWEA;
 import java.io.*;
 
-public class Solution5644 {
+public class Solution5648 {
     static int answer;
     static int N;
     static atom[] atoms;
