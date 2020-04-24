@@ -11,6 +11,7 @@ public class Solution1289 {
         char[] memory;
         for(int test_case = 1; test_case <= T; test_case++){
             bw.write("#"+test_case+" ");
+            answer = 0;
             memory = br.readLine().trim().toCharArray();
             answer = solve(memory);
             bw.write(answer+"\n");
