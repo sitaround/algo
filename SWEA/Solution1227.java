@@ -16,11 +16,11 @@ class Solution1227{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         
-        int T;
+        // int T;
         int answer;
 
         for(int test_case = 1; test_case <= 10; test_case++){
-            T = Integer.parseInt(br.readLine());
+            br.readLine();
             bw.write("#"+test_case+" ");
             map = new int[100][100];
             for(int i = 0; i < 100; i++){
