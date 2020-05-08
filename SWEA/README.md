@@ -58,6 +58,7 @@ int pow(int base, int exp){
 으로 최대공약수는 36이다.
 ```java
 int euclidean(int a, int b){
-    
+    if(b == 0) return a;
+    return euclidean(b, a%b);
 }
 ```
