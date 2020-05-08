@@ -1,4 +1,5 @@
-package SWEA;
+package SWEA.D4;
+
 import java.io.*;
 
 public class Solution9088 {

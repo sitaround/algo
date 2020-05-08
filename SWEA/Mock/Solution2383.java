@@ -1,4 +1,4 @@
-package SWEA;
+package SWEA.Mock;
 
 import java.io.*;
 import java.util.Arrays;

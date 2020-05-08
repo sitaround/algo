@@ -1,4 +1,5 @@
-package SWEA;
+package SWEA.Mock;
+
 import java.io.*;
 
 public class Solution5644 {
