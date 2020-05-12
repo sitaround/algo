@@ -1,7 +1,6 @@
 package SWEA.D3;
 
 import java.io.*;
-import java.util.Arrays;
 
 public class Solution3304 {
     public static void main(String[] args) throws Exception {
