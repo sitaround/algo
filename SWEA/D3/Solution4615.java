@@ -17,14 +17,16 @@ public class Solution4615 {
             String[] parse = br.readLine().trim().split(" ");
             n = Integer.parseInt(parse[0]);
             m = Integer.parseInt(parse[1]);
-            map = new int[n][n];
-            map[n/2][n/2] = map[n/2-1][n/2-1] = 2;//백
-            map[n/2-1][n/2] = map[n/2][n/2-1] = 1;//흑
+            map = new int[n+1][n+1];
+            tmp = n/2;
+            map[tmp][tmp] = map[tmp+1][tmp+1] = 2;//백
+            map[tmp+1][tmp] = map[tmp][tmp+1] = 1;//흑
             for(int i = 0; i < m; i++) {
                 parse = br.readLine().trim().split(" ");
-                x = Integer.parseInt(parse[0]) - 1;
-                y = Integer.parseInt(parse[1]) - 1;
+                x = Integer.parseInt(parse[0]);
+                y = Integer.parseInt(parse[1]);
                 c = Integer.parseInt(parse[2]);
+                map[x][y] = c;
                 for(int j = 0; j < 8; j++) {
                     nx = x;
                     ny = y;
@@ -32,10 +34,10 @@ public class Solution4615 {
                     while(true) {
                         nx += dx[j];
                         ny += dy[j];
-                        if(!isValid(n, nx, ny)) break;
+                        if(nx < 1 || ny < 1 || nx > n || ny > n) break;
                         if(map[nx][ny] == 0) break;
-                        if(map[nx][ny] == c) {
-                            for(int k = 0; k <= tmp; k++) {
+                        if(map[nx][ny] == c && tmp > 0) {
+                            for(int k = 1; k <= tmp; k++) {
                                 map[x+k*dx[j]][y+k*dy[j]] = c;
                             }
                             break;
@@ -55,8 +57,8 @@ public class Solution4615 {
         int w, b;
         w = 0;
         b = 0;
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= n; j++) {
                 if(map[i][j] == 1) b++;
                 else if(map[i][j] == 2) w++;
             }
@@ -64,8 +66,4 @@ public class Solution4615 {
         return b + " " + w;
     }
 
-    static boolean isValid(int n, int x, int y) {
-        if(x > -1 && y > -1 && x < n && y < n) return true;
-        return false;
-    }
 }
