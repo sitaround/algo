@@ -28,15 +28,18 @@ public class Solution4615 {
                 c = Integer.parseInt(parse[2]);
                 map[x][y] = c;
                 for(int j = 0; j < 8; j++) {
-                    nx = x;
-                    ny = y;
-                    tmp = 0;
+                    nx = x + dx[j];
+                    ny = y + dy[j];
+                    if(nx < 1 || ny < 1 || nx > n || ny > n) continue;
+                    if(map[nx][ny] == c) continue;
+                    if(map[nx][ny] == 0) continue;
+                    tmp = 1;
                     while(true) {
                         nx += dx[j];
                         ny += dy[j];
                         if(nx < 1 || ny < 1 || nx > n || ny > n) break;
                         if(map[nx][ny] == 0) break;
-                        if(map[nx][ny] == c && tmp > 0) {
+                        if(map[nx][ny] == c) {
                             for(int k = 1; k <= tmp; k++) {
                                 map[x+k*dx[j]][y+k*dy[j]] = c;
                             }
