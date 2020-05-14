@@ -26,6 +26,6 @@ public class Solution4299 {
     static int solve(int d, int h, int m) {
         int minute = 11 * 24 * 60 + 11 * 60 + 11;
         int now = d * 24 * 60 + h * 60 + m;
-        return minute > now ? -1 : minute - now;
+        return minute > now ? -1 : now - minute;
     }
 }
