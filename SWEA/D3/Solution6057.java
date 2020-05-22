@@ -1,8 +1,6 @@
 package SWEA.D3;
 
 import java.io.*;
-import java.util.LinkedList;
-import java.util.Queue;
  
 public class Solution6057 {
     public static void main(String[] args) throws Exception {
@@ -36,38 +34,15 @@ public class Solution6057 {
  
     static int solve(int n, boolean[][] vertex) {
         int ans = 0;
-        boolean[][] visit = new boolean[n+1][n+1];
-        Queue<Vertex> q = new LinkedList<>();
-        Vertex v;
         for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= n; j++) {
-                if(visit[i][j] || !vertex[i][j]) continue;
-                q.add(new Vertex(i, j, 1));
-                visit[i][j] = true;
-                visit[j][i] = true;
-                while(!q.isEmpty()) {
-                    v = q.poll();
-                    if(v.cnt == 3 && i == v.y) {
-                        ans++;
-                        continue;
-                    }
-                    if(v.cnt == 3) continue;
-                    for(int k = 1; k <= n; k++) {
-                        if(visit[v.y][k] || !vertex[v.y][k]) continue;
-                        q.add(new Vertex(v.y, k, v.cnt+1));
+            for(int j = i+1; j <= n; j++) {
+                if(vertex[i][j]) {
+                    for(int k = j+1; k <= n; k++) {
+                        if(vertex[j][k] && vertex[k][i]) ans++;
                     }
                 }
             }
         }
         return ans;
-    }
- 
-    static class Vertex {
-        int x, y, cnt;
-        Vertex(int x, int y, int cnt) {
-            this.x = x;
-            this.y = y;
-            this.cnt = cnt;
-        }
     }
 }
