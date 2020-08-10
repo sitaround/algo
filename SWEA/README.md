@@ -62,3 +62,19 @@ int euclidean(int a, int b){
     return euclidean(b, a%b);
 }
 ```
+- 부동소수점
+분수로 극한으로 표현 가능한 어느 실수에 대해 가수를 구하고 싶을 때 생기는 현상.
+만약 a = 1.275라는 수에서 소수점 이하의 수를 구하고 싶을 때, a -= (int) a나 a -= 1을 하면 a = 0.2749999..으로 나온다. 
+```java
+double getDecimalPoint(double a) {
+    double b = 1.0;
+    while(true) {
+        a *= 10.0;
+        b *= 10.0;
+        if(a % (int)a == 0.0) break; 
+    }
+    a %= b;
+    a /= b;
+    return a;
+}
+```
